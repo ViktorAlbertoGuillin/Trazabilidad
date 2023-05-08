@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Trazabilidad.Repositorio.Entidades.Bloque>
+
+@{
+    ViewData["Title"] = "Listar";
+}
+
+<h1>Listar</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Datos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hash)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hash_anterior)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tiempo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hash)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hash_anterior)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tiempo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

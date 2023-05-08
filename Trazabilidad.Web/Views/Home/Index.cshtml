@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido</h1>
+    <p>Bienvenidos a nuestra página web que presenta un ejemplo básico de la 
+        aplicación de blockchain en la trazabilidad alimentaria. La trazabilidad 
+        alimentaria es esencial para garantizar la seguridad y calidad de los 
+        alimentos que consumimos. La tecnología blockchain se ha convertido en una 
+        herramienta importante para la trazabilidad de los alimentos, ya que permite 
+        un registro inmutable y seguro de toda la cadena de suministro, 
+        desde el origen hasta el punto de venta. En esta página, encontrarás un 
+        ejemplo simple pero efectivo de cómo se puede utilizar la tecnología blockchain 
+        para mejorar la trazabilidad alimentaria, proporcionando una mayor transparencia 
+        y confianza para los consumidores y las empresas en la industria alimentaria.</p>
+        <br />
+    <a asp-controller="CadenaBloque" asp-action="Listar" class="btn btn-dark">Listar registros</a>
+    <a asp-controller="CadenaBloque" asp-action="Agregar" class="btn btn-dark">Agregar registro</a>
+</div>

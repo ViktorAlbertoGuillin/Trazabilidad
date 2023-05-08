@@ -1,0 +1,53 @@
+﻿@model Trazabilidad.Repositorio.Entidades.Bloque
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+<h4>Bloque</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Datos" class="control-label"></label>
+                <input asp-for="Datos" class="form-control" />
+                <span asp-validation-for="Datos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hash" class="control-label"></label>
+                <input asp-for="Hash" class="form-control" />
+                <span asp-validation-for="Hash" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hash_anterior" class="control-label"></label>
+                <input asp-for="Hash_anterior" class="form-control" />
+                <span asp-validation-for="Hash_anterior" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tiempo" class="control-label"></label>
+                <input asp-for="Tiempo" class="form-control" />
+                <span asp-validation-for="Tiempo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
