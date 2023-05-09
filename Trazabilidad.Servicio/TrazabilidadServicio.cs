@@ -19,25 +19,25 @@ namespace Trazabilidad.Servicio
             _repositorio = repositorio;
         }
 
-        public void AgregarBloque(Bloque bloque)
+        public void AgregarBloque(string dato)
         {
-            _repositorio.GuardarBloque(bloque);
+            _repositorio.GuardarBloque(dato);
         }
 
-        public int ContadorBloque()
+        /*public int ContadorBloque()
         {
             List<Bloque> lista = _repositorio.GetCadena();
             int cantidad = lista.Count();
             return cantidad;
 
-        }
+        }*/
 
-        public string UltimoHash()
+        /*public string UltimoHash()
         {
             List<Bloque> lista = _repositorio.GetCadena();
             string hash = lista.Last().Hash;
             return hash;
-        }
+        }*/
 
         public List<Bloque> ListarBloques()
         {

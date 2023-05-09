@@ -9,7 +9,7 @@ namespace Trazabilidad.Repositorio.Interfaces
 {
     public interface ITrazabilidadRepositorio
     {
-        void GuardarBloque(Bloque bloque);
+        void GuardarBloque(string dato);
         List<Bloque> GetCadena();
         Bloque BuscarBloquePorId(int id);
         void ModificarBloque(Bloque bloqueEditado);

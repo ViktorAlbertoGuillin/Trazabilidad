@@ -21,12 +21,9 @@ namespace Trazabilidad.Web.Controllers
         // Método para agregar un bloque a la cadena
         public IActionResult AgregarBloque(IFormCollection formulario)
         {
-            Bloque nuevoBloque = new Bloque();
-            nuevoBloque.Datos = formulario["Datos"];
-            nuevoBloque.Hash_anterior = _servicio.ContadorBloque() == 0 ? "0" : _servicio.UltimoHash();
-            nuevoBloque.Tiempo = DateTime.Now;
-            _servicio.AgregarBloque(nuevoBloque);
-            return Redirect("CadenaBloque/Listar");
+
+            _servicio.AgregarBloque(formulario["Datos"]);
+            return Redirect("/CadenaBloque/Listar");
         }
 
         public IActionResult Listar()
