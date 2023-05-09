@@ -39,7 +39,7 @@ namespace Trazabilidad.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Editar(IFormCollection formulario)
+        public IActionResult Editar(IFormCollection formulario) 
         {
             Bloque bloqueEditado = new Bloque();
             bloqueEditado.Id = int.Parse(formulario["Id"]);
@@ -58,5 +58,10 @@ namespace Trazabilidad.Web.Controllers
             return Redirect("/CadenaBloque/Listar");
         }
 
+        public IActionResult DefinirIntegridad()
+        {
+            List<IntegridadBloque> Listado =_servicio.Integridad();
+            return View(Listado);
+        }
     }
 }

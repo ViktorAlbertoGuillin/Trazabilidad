@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Trazabilidad.Repositorio.Entidades.IntegridadBloque>
+
+@{
+    ViewData["Title"] = "DefinirIntegridad";
+}
+
+<h1>DefinirIntegridad</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Datos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hash)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hash_anterior)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tiempo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Integro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            
+            @if (@item.Integro == false){
+                <tr>
+
+                    <td>
+                        <b>@item.Id</b>
+                    </td>
+                    <td>
+                        <b>item.Datos</b>
+                    </td>
+                    <td>
+                        <b>item.Hash</b>
+                    </td>
+                    <td>
+                        <b>item.Hash_anterior</b>
+                    </td>
+                    <td>
+                        <b>item.Tiempo</b>
+                    </td>
+                    <td>
+                        <b>item.Integro</b>
+                    </td>
+                
+                </tr>
+            }
+            else
+            {
+                <tr>
+
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Datos
+                    </td>
+                    <td>
+                        @item.Hash
+                    </td>
+                    <td>
+                        @item.Hash_anterior
+                    </td>
+                    <td>
+                        @item.Tiempo
+                    </td>
+                    <td>
+                        @item.Integro
+                    </td>
+
+                </tr>
+            }
+}
+    </tbody>
+</table>

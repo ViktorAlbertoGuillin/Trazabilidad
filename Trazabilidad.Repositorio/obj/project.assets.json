@@ -937,19 +937,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Casa\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ProyectosCSharp\\Trazabilidad\\Trazabilidad.Repositorio\\Trazabilidad.Repositorio.csproj",
+      "projectUniqueName": "C:\\proyectosCSharp\\Trazabilidad\\Trazabilidad.Repositorio\\Trazabilidad.Repositorio.csproj",
       "projectName": "Trazabilidad.Repositorio",
-      "projectPath": "C:\\ProyectosCSharp\\Trazabilidad\\Trazabilidad.Repositorio\\Trazabilidad.Repositorio.csproj",
-      "packagesPath": "C:\\Users\\Casa\\.nuget\\packages\\",
-      "outputPath": "C:\\ProyectosCSharp\\Trazabilidad\\Trazabilidad.Repositorio\\obj\\",
+      "projectPath": "C:\\proyectosCSharp\\Trazabilidad\\Trazabilidad.Repositorio\\Trazabilidad.Repositorio.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\proyectosCSharp\\Trazabilidad\\Trazabilidad.Repositorio\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Casa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -996,7 +1001,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }

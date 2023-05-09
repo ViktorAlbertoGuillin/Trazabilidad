@@ -76,5 +76,7 @@ namespace Trazabilidad.Repositorio
             Bloque bloque = BuscarBloquePorId(Id);
             TrazabilidadSeudoDatabase.GetCadena().Remove(bloque);
         }
+
+        
     }
 }
