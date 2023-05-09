@@ -51,7 +51,7 @@ namespace Trazabilidad.Web.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult Eliminar(int Id)
         {
             _servicio.EliminarBloque(Id);
