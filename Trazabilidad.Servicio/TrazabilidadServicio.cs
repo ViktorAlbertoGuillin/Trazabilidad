@@ -58,24 +58,34 @@ namespace Trazabilidad.Servicio
             _repositorio.EliminarBloque(Id);
         }
 
-        public List<IntegridadBloque> Integridad()
+        public Boolean VerificarIntegridad()
         {
-            List<Bloque> lista = new List<Bloque>();
-            lista = _repositorio.GetCadena();
-            List<IntegridadBloque> listaRevisada = new List<IntegridadBloque>();    
-            for(int i=1; i < lista.Count();  i++  )
+            List<Bloque> listaDatos = _repositorio.GetCadena();
+            for (int i = 0; i < listaDatos.Count; i++)
             {
-                listaRevisada.Add(new IntegridadBloque { Id = lista[i].Id,Datos = lista[i].Datos, Hash = lista[i].Hash, Hash_anterior = lista[i].Hash_anterior, Tiempo = lista[i].Tiempo, (lista[i + 1].Hash_anterior == lista[i].Hash) ? listaRevisada[i].Integro = true : listaRevisada[i].Integro = true });
-                if (lista[i + 1].Hash_anterior == lista[i].Hash )
+                Bloque bloque = listaDatos[i];
+                if (i == 0)
                 {
-                    listaRevisada. = true;
+                    if (bloque.Hash_anterior != "0")
+                    {
+                        return false;
+                    }
                 }
                 else
                 {
-                    listaRevisada[i].Integro = true;
+                    Bloque bloqueAnterior = listaDatos[i - 1];
+                    if (bloque.Hash_anterior != bloqueAnterior.Hash)
+                    {
+                        return false;
+                    }
                 }
+
             }
-            return listaRevisada;
+            return true;
         }
     }
+
+    
+
+   
 }

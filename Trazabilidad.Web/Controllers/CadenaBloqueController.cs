@@ -60,8 +60,8 @@ namespace Trazabilidad.Web.Controllers
 
         public IActionResult DefinirIntegridad()
         {
-            List<IntegridadBloque> Listado =_servicio.Integridad();
-            return View(Listado);
+            Boolean resultado = _servicio.VerificarIntegridad();
+            return View(resultado);
         }
     }
 }
