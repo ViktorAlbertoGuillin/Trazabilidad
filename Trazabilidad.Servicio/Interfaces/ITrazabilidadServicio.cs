@@ -16,6 +16,6 @@ namespace Trazabilidad.Servicio.Interfaces
         Bloque BuscarBloquePorId(int Id);
         void ModificarBloque(Bloque bloqueEditado);
         void EliminarBloque(int Id);
-        Boolean VerificarIntegridad();
+        string VerificarIntegridad();
     }
 }

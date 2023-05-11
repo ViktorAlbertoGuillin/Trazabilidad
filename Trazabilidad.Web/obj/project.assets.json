@@ -9212,24 +9212,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Casa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\proyectosCSharp\\Trazabilidad\\Trazabilidad.Web\\Trazabilidad.Web.csproj",
+      "projectUniqueName": "C:\\ProyectosCSharp\\Trazabilidad\\Trazabilidad.Web\\Trazabilidad.Web.csproj",
       "projectName": "Trazabilidad.Web",
-      "projectPath": "C:\\proyectosCSharp\\Trazabilidad\\Trazabilidad.Web\\Trazabilidad.Web.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\proyectosCSharp\\Trazabilidad\\Trazabilidad.Web\\obj\\",
+      "projectPath": "C:\\ProyectosCSharp\\Trazabilidad\\Trazabilidad.Web\\Trazabilidad.Web.csproj",
+      "packagesPath": "C:\\Users\\Casa\\.nuget\\packages\\",
+      "outputPath": "C:\\ProyectosCSharp\\Trazabilidad\\Trazabilidad.Web\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Casa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9243,11 +9238,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\proyectosCSharp\\Trazabilidad\\Trazabilidad.Repositorio\\Trazabilidad.Repositorio.csproj": {
-              "projectPath": "C:\\proyectosCSharp\\Trazabilidad\\Trazabilidad.Repositorio\\Trazabilidad.Repositorio.csproj"
+            "C:\\ProyectosCSharp\\Trazabilidad\\Trazabilidad.Repositorio\\Trazabilidad.Repositorio.csproj": {
+              "projectPath": "C:\\ProyectosCSharp\\Trazabilidad\\Trazabilidad.Repositorio\\Trazabilidad.Repositorio.csproj"
             },
-            "C:\\proyectosCSharp\\Trazabilidad\\Trazabilidad.Servicio\\Trazabilidad.Servicio.csproj": {
-              "projectPath": "C:\\proyectosCSharp\\Trazabilidad\\Trazabilidad.Servicio\\Trazabilidad.Servicio.csproj"
+            "C:\\ProyectosCSharp\\Trazabilidad\\Trazabilidad.Servicio\\Trazabilidad.Servicio.csproj": {
+              "projectPath": "C:\\ProyectosCSharp\\Trazabilidad\\Trazabilidad.Servicio\\Trazabilidad.Servicio.csproj"
             }
           }
         }
@@ -9290,7 +9285,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

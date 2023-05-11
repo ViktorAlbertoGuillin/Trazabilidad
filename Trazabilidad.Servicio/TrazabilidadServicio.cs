@@ -58,8 +58,9 @@ namespace Trazabilidad.Servicio
             _repositorio.EliminarBloque(Id);
         }
 
-        public Boolean VerificarIntegridad()
+        public string VerificarIntegridad()
         {
+            string mensaje;
             List<Bloque> listaDatos = _repositorio.GetCadena();
             for (int i = 0; i < listaDatos.Count; i++)
             {
@@ -68,7 +69,7 @@ namespace Trazabilidad.Servicio
                 {
                     if (bloque.Hash_anterior != "0")
                     {
-                        return false;
+                        return "Falta el bloque de informacion inicial ";
                     }
                 }
                 else
@@ -76,12 +77,11 @@ namespace Trazabilidad.Servicio
                     Bloque bloqueAnterior = listaDatos[i - 1];
                     if (bloque.Hash_anterior != bloqueAnterior.Hash)
                     {
-                        return false;
+                        return "Falta al menos un bloque de informacion";
                     }
                 }
-
             }
-            return true;
+            return "La cadena de bloque se encuentra completa";
         }
     }
 
