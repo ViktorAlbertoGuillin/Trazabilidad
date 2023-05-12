@@ -11,20 +11,13 @@ namespace Trazabilidad.Repositorio
 {
     public class TrazabilidadRepositorio : ITrazabilidadRepositorio
     {
-        public void GuardarBloque(string dato)
+        public void GuardarBloque(Bloque bloque)
         {
-            int? idUltimo = ObtenerUltimoId();
-            idUltimo++;
-            Bloque bloque = new Bloque();
-            bloque.Id = (int)idUltimo;
-            bloque.Datos = dato;
-            bloque.Tiempo = DateTime.Now;
-            bloque.Hash_anterior = TrazabilidadSeudoDatabase.GetCadena().Count() == 0 ? "0" : TrazabilidadSeudoDatabase.GetCadena().Last().Hash;
-            bloque.Hash = CalcularHash(bloque.Id + bloque.Datos + bloque.Tiempo + bloque.Hash_anterior);
+            
             TrazabilidadSeudoDatabase.GetCadena().Add(bloque);
         }
 
-        private int ObtenerUltimoId()
+        public int ObtenerUltimoId()
         {
             try
             {
@@ -43,13 +36,7 @@ namespace Trazabilidad.Repositorio
             }
         }
 
-        private string CalcularHash(string dato)
-        {
-            SHA256 sha256 = SHA256.Create();
-            byte[] inputBytes = Encoding.ASCII.GetBytes($"{dato}");
-            byte[] outputBytes = sha256.ComputeHash(inputBytes);
-            return Convert.ToBase64String(outputBytes);
-        }
+        
 
         public List<Bloque> GetCadena()
         {

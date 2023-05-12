@@ -10,8 +10,7 @@ namespace Trazabilidad.Servicio.Interfaces
     public interface ITrazabilidadServicio
     {
         void AgregarBloque(string dato);
-        //int ContadorBloque();
-        //string UltimoHash();
+        string CalcularHash(string dato);
         List<Bloque> ListarBloques();
         Bloque BuscarBloquePorId(int Id);
         void ModificarBloque(Bloque bloqueEditado);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Trazabilidad.Repositorio;
 using Trazabilidad.Repositorio.Entidades;
 using Trazabilidad.Repositorio.Interfaces;
 using Trazabilidad.Servicio.Interfaces;
@@ -21,23 +22,23 @@ namespace Trazabilidad.Servicio
 
         public void AgregarBloque(string dato)
         {
-            _repositorio.GuardarBloque(dato);
+            int? idUltimo = _repositorio.ObtenerUltimoId();
+            idUltimo++;
+            Bloque bloque = new Bloque();
+            bloque.Id = (int)idUltimo;
+            bloque.Datos = dato;
+            bloque.Tiempo = DateTime.Now;
+            bloque.Hash_anterior = TrazabilidadSeudoDatabase.GetCadena().Count() == 0 ? "0" : TrazabilidadSeudoDatabase.GetCadena().Last().Hash;
+            bloque.Hash = CalcularHash(bloque.Id + bloque.Datos + bloque.Tiempo + bloque.Hash_anterior);
+            _repositorio.GuardarBloque(bloque);
         }
-
-        /*public int ContadorBloque()
+        public string CalcularHash(string dato)
         {
-            List<Bloque> lista = _repositorio.GetCadena();
-            int cantidad = lista.Count();
-            return cantidad;
-
-        }*/
-
-        /*public string UltimoHash()
-        {
-            List<Bloque> lista = _repositorio.GetCadena();
-            string hash = lista.Last().Hash;
-            return hash;
-        }*/
+            SHA256 sha256 = SHA256.Create();
+            byte[] inputBytes = Encoding.ASCII.GetBytes($"{dato}");
+            byte[] outputBytes = sha256.ComputeHash(inputBytes);
+            return Convert.ToBase64String(outputBytes);
+        }
 
         public List<Bloque> ListarBloques()
         {
@@ -60,7 +61,7 @@ namespace Trazabilidad.Servicio
 
         public string VerificarIntegridad()
         {
-            string mensaje;
+            string hash;
             List<Bloque> listaDatos = _repositorio.GetCadena();
             for (int i = 0; i < listaDatos.Count; i++)
             {
@@ -80,8 +81,14 @@ namespace Trazabilidad.Servicio
                         return "Falta al menos un bloque de informacion";
                     }
                 }
+                hash = CalcularHash(bloque.Id + bloque.Datos + bloque.Tiempo + bloque.Hash_anterior);
+                if(hash != bloque.Hash)
+                {
+                    return "Al menos un bloque de informacion fue alterado, el hash almacenado no coincide con la informacion del bloque";
+                }
+               
             }
-            return "La cadena de bloque se encuentra completa";
+            return "La cadena de bloque se encuentra completa y su contenido no fue alterado";
         }
     }
 

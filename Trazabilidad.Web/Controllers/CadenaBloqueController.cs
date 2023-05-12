@@ -48,7 +48,7 @@ namespace Trazabilidad.Web.Controllers
             bloqueEditado.Hash_anterior = formulario["Hash_anterior"];
             bloqueEditado.Tiempo = DateTime.Parse( formulario["Tiempo"]);
             _servicio.ModificarBloque(bloqueEditado);
-            return View();
+            return Redirect("/CadenaBloque/Listar");
         }
 
         [HttpGet]
